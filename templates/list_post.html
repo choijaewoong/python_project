@@ -1,0 +1,12 @@
+{% extends "index.html" %}
+
+{% block content %}
+<div class="container">
+  <ul>
+  {% for post in posts %}
+    <li> Title: {{post.title}} </li>
+    <li>Content: {{post.content }}</li>
+    </br>
+  {% endfor %}
+  </ul>
+{% endblock %}
