@@ -1,0 +1,21 @@
+{
+  "name": "python_project",
+  "homepage": "https://github.com/torerov/python_project",
+  "authors": [
+    "torerov <torerov39@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.6"
+  }
+}
