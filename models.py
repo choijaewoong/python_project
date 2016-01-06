@@ -1,3 +1,10 @@
+# models.py
+from app import db
+from datetime import datetime
+import flask.ext.login as flask_login
+from flask.ext.bcrypt import Bcrypt
+
+# models.py
 from app import db
 from datetime import datetime
 import flask.ext.login as flask_login
@@ -24,7 +31,6 @@ class User(db.Model, flask_login.UserMixin):
     def verify_password(self, password):
         bcrypt = Bcrypt()
         return bcrypt.check_password_hash(self.password, password)
-
 
 class Post(db.Model):
     id = db.Column(db.Integer, primary_key=True)

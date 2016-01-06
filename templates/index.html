@@ -18,7 +18,20 @@
           <a class="navbar-brand" href="#">Flask Blog</a>
         </div>
         <ul class="nav navbar-nav">
+          <!-- 로그인 되어있고 관리자 인경우 -->
+          {% if current_user.is_authenticated and current_user.is_admin %}
           <li><a href="/post">Write Post</a></li>
+          {% endif %}
+        </ul>
+        <ul class="u-float-right nav navbar-nav">
+          {% if not current_user.is_authenticated %} <!-- 로그인 되어있지 않은 경우 -->
+          <li><a>Welcome to Blog</a></li>
+          <li><a href="/auth/login">Log in</a></li>
+          <li><a href="/auth/signup">Sign up</a></li>
+          {% else %} <!-- 로그인 되어있는 경우 -->
+          <li><a>{{ current_user.email }}</a></li>
+          <li><a href="/auth/logout">Log out</a></li>
+          {% endif %}
         </ul>
       </div>
     </nav>

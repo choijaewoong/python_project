@@ -69,7 +69,36 @@ def post():
         )
         db.session.add(post)
         db.session.commit()
-        return redirect('/')        
+        return redirect('/')
+
+# 글 상세 보기
+@app.route("/post/<int:id>", methods=['GET'])
+def post_detail(id):
+    if request.method == 'GET':
+        post = Post.query.get(id)
+        return render_template('detail_post.html', post=post)
+
+# 기존 글 수정
+@app.route('/post/update/<int:id>', methods=['GET', 'POST'])
+def post_update(id):
+    if request.method == 'GET':
+        post = Post.query.get(id)
+        return render_template('update_post.html', post=post)
+    if request.method == 'POST':
+        post = Post.query.get(id)
+        post.title = request.form['title']
+        post.content = request.form['content']
+        db.session.commit()
+        return redirect('/')
+
+# 글 삭제
+@app.route('/post/delete/<path:id>', methods=['POST'])
+def post_delete(id):
+    if request.method == 'POST':
+        post = Post.query.get(id)
+        db.session.delete(post)
+        db.session.commit()
+        return redirect('/')
 
 if __name__ == '__main__':
     app.run(debug=True)

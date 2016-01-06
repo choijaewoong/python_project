@@ -1,0 +1,16 @@
+{% extends "index.html" %}
+
+{% block content %}
+<form action="/auth/signup" method="POST">
+  <input name="_csrf_token" type="hidden" value="{{ csrf_token }}">
+  <div class="form-group">
+    <label>Email</label>
+    <input type="email" class="form-control" name="email">
+  </div>
+  <div class="form-group">
+    <label>Password</label>
+    <input type="password" class="form-control" name="password">
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
+{% endblock %}

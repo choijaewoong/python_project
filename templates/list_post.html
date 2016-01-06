@@ -1,12 +1,36 @@
 {% extends "index.html" %}
 
 {% block content %}
-<div class="container">
-  <ul>
-  {% for post in posts %}
-    <li> Title: {{post.title}} </li>
-    <li>Content: {{post.content }}</li>
-    </br>
-  {% endfor %}
-  </ul>
+  <div class="container">
+    <div class="row">
+      {% for post in posts %}
+      <div class="col-sm-12">
+        <div class="post panel panel-default">
+          <div class="post__header panel-heading">
+            <h3 class="panel-title">
+              <a href="/post/{{ post.id }}">{{ post.title }}</a>
+            </h3>
+            {% if current_user.is_admin %} <!-- 관리자 인 경우 -->
+            <div class="u-float-right">
+              <a class="btn btn-success btn-sm" href="/post/update/{{ post.id }}">
+                Update
+              </a>
+              <form action="/po인st/delete/{{ post.id }}" method="POST">
+                <input name="_csrf_token" type="hidden" value="{{ csrf_token }}">
+                <button type="submit" class="btn btn-danger btn-sm">
+                  Delete
+                </button>
+              </form>
+            </div>
+            {% endif %}
+          </div>
+          <div class="post__content panel-body">
+            {{ post.content }}
+            <p>{{ post.created_at }}</p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
 {% endblock %}
