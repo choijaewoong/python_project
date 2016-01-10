@@ -1,0 +1,21 @@
+{
+  "name": "python_project",
+  "version": "1.0.0",
+  "description": "python_project",
+  "main": "webpack.config.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/torerov/python_project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/torerov/python_project/issues"
+  },
+  "homepage": "https://github.com/torerov/python_project#readme"
+}
