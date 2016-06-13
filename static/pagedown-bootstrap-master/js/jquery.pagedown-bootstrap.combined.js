@@ -556,7 +556,7 @@ else
 		function writeAnchorTag(wholeMatch, m1, m2, m3, m4, m5, m6, m7) {
 			if (m7 == undefined) m7 = "";
 			var whole_match = m1;
-			var link_text = m2.replace(/:\/\//g, "~P"); // to prevent auto-linking withing the link. will be converted back after the auto-linker runs
+			var link_text = m2.replace(/:\/\//g, "~P"); // to prevent auto-linking within the link. will be converted back after the auto-linker runs
 			var link_id = m3.toLowerCase();
 			var url = m4;
 			var title = m7;

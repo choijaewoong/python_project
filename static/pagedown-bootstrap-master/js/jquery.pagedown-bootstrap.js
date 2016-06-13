@@ -67,7 +67,7 @@
 				idAppend++;
 			}
 
-			//Assign the choosen id to the element
+			//Assign the chosen id to the element
 			$(this).attr('id', id+"-"+idAppend.toString());
 
 			//Wrap the element with the needed html
