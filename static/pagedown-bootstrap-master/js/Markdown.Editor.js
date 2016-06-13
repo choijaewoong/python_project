@@ -2090,7 +2090,7 @@
 		chunk.skipLines(1, 1);
 
 		// We make a level 2 header if there is no current header.
-		// If there is a header level, we substract one from the header level.
+		// If there is a header level, we subtract one from the header level.
 		// If it's already a level 1 header, it's removed.
 		var headerLevelToCreate = headerLevel == 0 ? 2 : headerLevel - 1;
 
